@@ -1,39 +1,42 @@
 {
-  "name": "hlf-node-utils",
-  "version": "1.0.0",
-  "description": "common services and utils",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf node_modules && rm -rf dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wearetheledger/hlf-node-utils.git"
-  },
-  "author": "theledger",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wearetheledger/hlf-node-utils/issues"
-  },
-  "homepage": "https://github.com/wearetheledger/hlf-node-utils#readme",
-  "dependencies": {
-    "@types/body-parser": "^1.16.8",
-    "@types/dotenv": "^4.0.2",
-    "@types/node": "^8.5.8",
-    "@types/winston": "^2.3.7",
-    "dotenv": "^4.0.0",
-    "fabric-ca-client": "^1.0.2",
-    "rxjs": "^5.4.0",
-    "typescript": "^2.6.2",
-    "winston": "^2.4.0",
-    "winston-daily-rotate-file": "^1.7.2"
-  },
-  "devDependencies": {
-    "@types/express-serve-static-core": "4.0.49",
-    "typescript": "^2.6.2",
-    "nodemon": "^1.12.1",
-    "ts-node": "^3.3.0"
-  }
+    "name": "hlf-node-utils",
+    "version": "1.0.0",
+    "description": "common services and utils",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "mocha --reporter spec",
+        "clean": "rm -rf node_modules && rm -rf dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wearetheledger/hlf-node-utils.git"
+    },
+    "author": "theledger",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wearetheledger/hlf-node-utils/issues"
+    },
+    "homepage": "https://github.com/wearetheledger/hlf-node-utils#readme",
+    "dependencies": {
+        "@types/body-parser": "^1.16.8",
+        "@types/dotenv": "^4.0.2",
+        "@types/node": "^8.5.8",
+        "@types/winston": "^2.3.7",
+        "dotenv": "^4.0.0",
+        "fabric-ca-client": "^1.0.2",
+        "rxjs": "^5.4.0",
+        "typescript": "^2.6.2",
+        "winston": "^2.4.0",
+        "winston-daily-rotate-file": "^1.7.2"
+    },
+    "devDependencies": {
+        "@types/express-serve-static-core": "4.0.49",
+        "chai": "^4.1.2",
+        "mocha": "^4.1.0",
+        "nodemon": "^1.12.1",
+        "ts-node": "^3.3.0",
+        "typescript": "^2.6.2"
+    }
 }
