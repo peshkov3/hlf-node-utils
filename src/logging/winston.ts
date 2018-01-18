@@ -3,13 +3,37 @@ import 'winston-daily-rotate-file';
 
 export class Loggers {
 
-    public static testLogger: LoggerInstance = new Logger({
+    public static hlf: LoggerInstance = new Logger({
         transports: [new transports.Console({
             level: 'debug',
             prettyPrint: true,
             handleExceptions: true,
             json: false,
-            label: 'Chain',
+            label: 'FABRIC',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+
+    public static grpc: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'GRPC',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+
+    public static pusher: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'PUSHER',
             colorize: true,
         })],
         exitOnError: false,

@@ -7,7 +7,7 @@
     "scripts": {
         "build": "tsc",
         "lint": "tslint -c tslint.json './src/**/*.ts'",
-        "test": "mocha --reporter spec",
+        "test": "npm run build && mocha --reporter spec",
         "clean": "rm -rf node_modules && rm -rf dist"
     },
     "repository": {
