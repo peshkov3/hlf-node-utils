@@ -5,6 +5,12 @@ import { FabricOptions } from '../models/fabricoptions.model';
 
 export class HlfClient extends ChainService {
 
+    /**
+     * set hlf options
+     * 
+     * @param {FabricOptions} fabricoptions 
+     * @memberof HlfClient
+     */
     setOptions(fabricoptions: FabricOptions) {
         this.options = fabricoptions;
     }
@@ -42,7 +48,7 @@ export class HlfClient extends ChainService {
      * @param argsRequest
      * @param ccId
      */
-    query(fcnRequest: string, argsRequest: string[], ccId: string): Promise<any> {
+    query(fcnRequest: string, argsRequest: string[], ccId = 'mycc'): Promise<any> {
         return Promise.resolve().then(() => {
             return this.newQuery(fcnRequest, argsRequest, ccId);
         }).then((queryResponses: Buffer[]) => {
@@ -60,7 +66,7 @@ export class HlfClient extends ChainService {
      * @returns 
      * @memberof ChainService
      */
-    invoke(fcnRequest: string, argsRequest: string[], ccId: string): Promise<any> {
+    invoke(fcnRequest: string, argsRequest: string[],  ccId = 'mycc'): Promise<any> {
         return Promise.resolve().then(() => {
             return this.sendTransactionProposal(fcnRequest, argsRequest, ccId);
         }).then((results: ProposalResponseObject) => {

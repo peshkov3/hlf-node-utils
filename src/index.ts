@@ -11,6 +11,7 @@ export class Utils {
     // }
     public static serializeJson(obj: Object): string { return Json.serializeJson(obj); }
     public static deserializeJson(string: string): Object { return Json.deserializeJson(string); }
+    public static stringifyParams(params: any[]): void { Json.stringifyParams(params); }
 }
 
 // tslint:disable-next-line:max-classes-per-file
@@ -22,3 +23,4 @@ export class Log {
 }
 
 export { HlfClient } from './hlfclient/hlfclient';
+export { RequestHelper } from './hlfclient/request.helper';

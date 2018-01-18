@@ -4,3 +4,7 @@
 - Logging & ErrorHandling
 - Hyperledger Fabric Client Wrapper
 - Transformations
+
+
+
+* all custom typings should include a linting disabler /* tslint:disable */

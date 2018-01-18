@@ -7,7 +7,7 @@
     "scripts": {
         "build": "tsc",
         "lint": "tslint -c tslint.json './src/**/*.ts'",
-        "test": "npm run build && mocha --reporter spec",
+        "test": "npm run lint && npm run build && mocha --reporter spec",
         "clean": "rm -rf node_modules && rm -rf dist"
     },
     "repository": {
@@ -33,7 +33,9 @@
         "type-util": "^0.1.5",
         "typescript": "^2.6.2",
         "winston": "^2.4.0",
-        "winston-daily-rotate-file": "^1.7.2"
+        "winston-daily-rotate-file": "^1.7.2",
+        "yup": "^0.23.0"
+
     },
     "devDependencies": {
         "@types/express-serve-static-core": "4.0.49",
@@ -41,6 +43,7 @@
         "mocha": "^4.1.0",
         "nodemon": "^1.12.1",
         "ts-node": "^3.3.0",
-        "typescript": "^2.6.2"
+        "typescript": "^2.6.2",
+        "tslint": "4.5.1"
     }
 }
