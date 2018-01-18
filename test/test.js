@@ -14,3 +14,10 @@ describe('deserializeJson string', () => {
         expect(result.test).to.equal('test');
     });
 });
+
+describe('start hlf client', () => {
+    it('should start', () => {
+        var client = new index.HlfClient();
+        client.
+    });
+});
