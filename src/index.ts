@@ -24,3 +24,8 @@ export class Log {
 
 export { HlfClient } from './hlfclient/hlfclient';
 export { RequestHelper } from './hlfclient/request.helper';
+
+export { FabricOptions } from './models/fabricoptions.model';
+export { JwtOptions } from './models/jwtoptions.model';
+export { GprcOptions } from './models/gprcoptions.model';
+export { CondorRoute } from './models/condorroute.model';

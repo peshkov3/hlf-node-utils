@@ -66,7 +66,7 @@ export class HlfClient extends ChainService {
      * @returns 
      * @memberof ChainService
      */
-    invoke(fcnRequest: string, argsRequest: string[],  ccId = 'mycc'): Promise<any> {
+    invoke(fcnRequest: string, argsRequest: string[], ccId = 'mycc'): Promise<any> {
         return Promise.resolve().then(() => {
             return this.sendTransactionProposal(fcnRequest, argsRequest, ccId);
         }).then((results: ProposalResponseObject) => {
@@ -83,18 +83,18 @@ export class HlfClient extends ChainService {
                 throw new Error('Failed to send Proposal or receive valid response. Response null or status is not 200. exiting...');
             }
         }, (err) => {
-            Log.hlf.error('Failed to send proposal due to error: ' + err.stack ? err.stack : err);
+            Log.hlf.error(err);
             throw new Error('Failed to send proposal due to error: ' + err.stack ? err.stack : err);
         }).then((response) => {
             if (response.status === 'SUCCESS') {
                 Log.hlf.info('Successfully sent transaction to the orderer.');
                 return this.txId.getTransactionID();
             } else {
-                Log.hlf.error(`Failed to order the transaction. Error code: ${response.status}`);
+                Log.hlf.error(`${response.status}`);
                 throw new Error(`Failed to order the transaction. Error code: ${response.status}`);
             }
         }, (err) => {
-            Log.hlf.error('Failed to send transaction due to error: ' + err.stack ? err.stack : err);
+            Log.hlf.error(err);
             throw new Error('Failed to send transaction due to error: ' + err.stack ? err.stack : err);
         });
     }

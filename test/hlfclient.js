@@ -19,7 +19,11 @@ describe('hlf client', () => {
         });
     });
     it('should be able to initialize the fabric client', () => {
-        client.init();
+        client.init().then(params => {
+            expect(1).to.equal(1);
+        }).catch(err => {
+            expect(1).to.equal(0);
+        });
     });
 });
 
@@ -69,7 +73,7 @@ describe('requesthelper', () => {
                 b: 'b'
             }
         };
-        requestHelper.queryRequest([body.name, body.payload], 'testRequest').then(params => {
+        requestHelper.queryRequest([body.name, body.payload], 'ping').then(params => {
             expect(1).to.equal(1);
         }).catch(err => {
             expect(1).to.equal(0);
@@ -83,7 +87,7 @@ describe('requesthelper', () => {
                 b: 'b'
             }
         };
-        requestHelper.invokeRequest([body.name, body.payload], 'testRequest').then(params => {
+        requestHelper.invokeRequest([body.name, body.payload], 'ping').then(params => {
             expect(1).to.equal(1);
         }).catch(err => {
             expect(1).to.equal(0);

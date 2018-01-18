@@ -3,8 +3,9 @@
 
 - Logging & ErrorHandling
 - Hyperledger Fabric Client Wrapper
+- Yup validation & Request helper
 - Transformations
 
 
 
-* all custom typings should include a linting disabler /* tslint:disable */
+`all custom typings should include a linting disabler /* tslint:disable */`

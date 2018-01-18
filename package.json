@@ -34,7 +34,7 @@
         "typescript": "^2.6.2",
         "winston": "^2.4.0",
         "winston-daily-rotate-file": "^1.7.2",
-        "yup": "^0.23.0"
+        "yup": "^0.23.0",
 
     },
     "devDependencies": {
