@@ -38,6 +38,17 @@ var Loggers = /** @class */ (function () {
             })],
         exitOnError: false,
     });
+    Loggers.config = new winston_1.Logger({
+        transports: [new winston_1.transports.Console({
+                level: 'debug',
+                prettyPrint: true,
+                handleExceptions: true,
+                json: false,
+                label: 'CONFIG',
+                colorize: true,
+            })],
+        exitOnError: false,
+    });
     Loggers.awssqs = new winston_1.Logger({
         transports: [new winston_1.transports.Console({
                 level: 'debug',

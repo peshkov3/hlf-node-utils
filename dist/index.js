@@ -24,6 +24,7 @@ var Log = /** @class */ (function () {
     Log.grpc = winston_1.Loggers.grpc;
     Log.pusher = winston_1.Loggers.pusher;
     Log.awssqs = winston_1.Loggers.awssqs;
+    Log.config = winston_1.Loggers.config;
     return Log;
 }());
 exports.Log = Log;

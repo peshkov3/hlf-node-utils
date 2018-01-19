@@ -11,6 +11,7 @@ export declare class Log {
     static grpc: LoggerInstance;
     static pusher: LoggerInstance;
     static awssqs: LoggerInstance;
+    static config: LoggerInstance;
 }
 export { HlfClient } from './hlfclient/hlfclient';
 export { RequestHelper } from './hlfclient/request.helper';

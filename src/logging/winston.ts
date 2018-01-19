@@ -39,6 +39,18 @@ export class Loggers {
         exitOnError: false,
     });
 
+    public static config: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'CONFIG',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+
     public static awssqs: LoggerInstance = new Logger({
         transports: [new transports.Console({
             level: 'debug',
