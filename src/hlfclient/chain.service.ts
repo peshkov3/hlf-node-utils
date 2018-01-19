@@ -129,6 +129,7 @@ export abstract class ChainService {
         return new Promise((resolve, reject) => {
             let handle = setTimeout(() => {
                 eh.disconnect();
+                Log.hlf.error('The transaction has timed out: ' + transactionID);
                 reject();
             }, 30000);
             eh.registerTxEvent(transactionID, (tx, code) => {
@@ -136,13 +137,10 @@ export abstract class ChainService {
                 eh.unregisterTxEvent(transactionID);
                 eh.disconnect();
                 if (code !== 'VALID') {
-                    Log.hlf.error(
-                        'The transaction was invalid, code = ' + code);
+                    Log.hlf.error('The transaction was invalid, code = ' + code);
                     reject();
                 } else {
-                    Log.hlf.info(
-                        'The transaction has been committed on peer ' +
-                        eh.getPeerAddr());
+                    Log.hlf.info('The transaction has been committed on peer ' + eh.getPeerAddr());
                     resolve();
                 }
             });

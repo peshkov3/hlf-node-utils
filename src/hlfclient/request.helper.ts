@@ -1,4 +1,4 @@
-import { HlfClient, Log } from '../index';
+import { HlfClient, Log, Utils } from '../index';
 
 export class RequestHelper {
 
@@ -12,8 +12,8 @@ export class RequestHelper {
      * @returns {Promise<any>} 
      * @memberof RoutesHelper
      */
-    public invokeRequest(params: any[], routeQuery: string): Promise<any> {
-        this.stringify(params);
+    public invokeRequest(params: any[], routeQuery: string): Promise<{ success: boolean }> {
+        Utils.stringifyParams(params);
         return this.hlfClient.invoke(routeQuery, params, )
             .then(() => {
                 Log.grpc.info('Valid transaction');
@@ -34,7 +34,7 @@ export class RequestHelper {
      * @memberof RoutesHelper
      */
     public queryRequest(params: any[], routeQuery: string, schema?: Schema): Promise<any> {
-        this.stringify(params);
+        Utils.stringifyParams(params);
         return this.hlfClient.query(routeQuery, params)
             .then((resp) => {
                 Log.grpc.info('Valid query');
@@ -60,22 +60,6 @@ export class RequestHelper {
                 Log.grpc.error('Validation error', err);
                 throw err;
             });
-    }
-
-    /**
-     * stringify all params
-     * @private
-     * @param {any} params 
-     * @memberof RequestHelper
-     */
-    private stringify(params) {
-        params.map(param => {
-            if (typeof param === 'object' || Array.isArray(param)) {
-                param = JSON.stringify(param);
-            } else {
-                param.toString();
-            }
-        });
     }
 
 }

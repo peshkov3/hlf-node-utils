@@ -28,13 +28,14 @@ export class HlfClient extends ChainService {
             this.setStateStore(wallet);
             return this.client.getUserContext(this.options.userId, true);
         }).then((user: User) => {
-            this.isUserEnrolled(user);
-            this.channel = this.client.newChannel(this.options.channelId);
-            const peerObj = this.client.newPeer(this.options.networkUrl);
-            this.channel.addPeer(peerObj);
-            this.channel.addOrderer(this.client.newOrderer(this.options.ordererUrl));
-            this.targets.push(peerObj);
-            return;
+            if (this.isUserEnrolled(user)) {
+                this.channel = this.client.newChannel(this.options.channelId);
+                const peerObj = this.client.newPeer(this.options.networkUrl);
+                this.channel.addPeer(peerObj);
+                this.channel.addOrderer(this.client.newOrderer(this.options.ordererUrl));
+                this.targets.push(peerObj);
+            }
+            return true;
         }, error => {
             this.handleError(error);
         }).catch((err) => {
