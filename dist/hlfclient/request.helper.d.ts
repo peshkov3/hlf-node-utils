@@ -10,7 +10,9 @@ export declare class RequestHelper {
      * @returns {Promise<any>}
      * @memberof RoutesHelper
      */
-    invokeRequest(params: any[], routeQuery: string): Promise<any>;
+    invokeRequest(params: any[], routeQuery: string): Promise<{
+        success: boolean;
+    }>;
     /**
      * queryRequest
      * @param {any} schema

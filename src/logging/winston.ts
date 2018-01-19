@@ -39,6 +39,18 @@ export class Loggers {
         exitOnError: false,
     });
 
+    public static sqs: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'SQS',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+
     public static prodlogger: LoggerInstance = new Logger({
         transports: [new transports.Console({
             level: 'debug',

@@ -10,6 +10,7 @@ export declare class Log {
     static hlf: LoggerInstance;
     static grpc: LoggerInstance;
     static pusher: LoggerInstance;
+    static sqs: LoggerInstance;
 }
 export { HlfClient } from './hlfclient/hlfclient';
 export { RequestHelper } from './hlfclient/request.helper';
