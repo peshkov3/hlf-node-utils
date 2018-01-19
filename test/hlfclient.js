@@ -65,7 +65,7 @@ describe('requesthelper', () => {
             expect(1).to.equal(1);
         });
     });
-    // TODO: use chai-as-promised (http://chaijs.com/plugins/chai-as-promised/)
+    // TODO: use chai-as-promised  (http://chaijs.com/plugins/chai-as-promised/)
     // it('should be able to send a query request', () => {
     //     const body = {
     //         name: 'hello',
