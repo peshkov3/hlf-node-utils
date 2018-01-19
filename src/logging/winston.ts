@@ -39,7 +39,7 @@ export class Loggers {
         exitOnError: false,
     });
 
-    public static sqs: LoggerInstance = new Logger({
+    public static awssqs: LoggerInstance = new Logger({
         transports: [new transports.Console({
             level: 'debug',
             prettyPrint: true,

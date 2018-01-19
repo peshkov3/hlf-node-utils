@@ -23,7 +23,7 @@ var Log = /** @class */ (function () {
     Log.hlf = winston_1.Loggers.hlf;
     Log.grpc = winston_1.Loggers.grpc;
     Log.pusher = winston_1.Loggers.pusher;
-    Log.sqs = winston_1.Loggers.sqs;
+    Log.awssqs = winston_1.Loggers.awssqs;
     return Log;
 }());
 exports.Log = Log;

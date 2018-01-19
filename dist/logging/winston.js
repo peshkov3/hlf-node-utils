@@ -38,7 +38,7 @@ var Loggers = /** @class */ (function () {
             })],
         exitOnError: false,
     });
-    Loggers.sqs = new winston_1.Logger({
+    Loggers.awssqs = new winston_1.Logger({
         transports: [new winston_1.transports.Console({
                 level: 'debug',
                 prettyPrint: true,

@@ -19,7 +19,7 @@ export class Log {
     public static hlf: LoggerInstance = Loggers.hlf;
     public static grpc: LoggerInstance = Loggers.grpc;
     public static pusher: LoggerInstance = Loggers.pusher;
-    public static sqs: LoggerInstance = Loggers.sqs;
+    public static awssqs: LoggerInstance = Loggers.awssqs;
 
 }
 

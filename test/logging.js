@@ -34,14 +34,14 @@ describe('log pusher ', () => {
         index.Log.pusher.error('test');
     });
 });
-describe('log sqs ', () => {
+describe('log awssqs ', () => {
     it('should log debug messages', () => {
-        index.Log.sqs.debug('test');
+        index.Log.awssqs.debug('test');
     });
     it('should log info messages', () => {
-        index.Log.sqs.info('test');
+        index.Log.awssqs.info('test');
     });
     it('should log error messages', () => {
-        index.Log.sqs.error('test');
+        index.Log.awssqs.error('test');
     });
 });
