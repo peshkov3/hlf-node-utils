@@ -5,6 +5,7 @@
 - Hyperledger Fabric Client Wrapper
 - Yup validation & Request helper
 - Transformations
+- Pusher typescript wrapper 
 
 
 
