@@ -12,7 +12,7 @@ var Utils = /** @class */ (function () {
     // }
     Utils.serializeJson = function (obj) { return jsonutils_1.Json.serializeJson(obj); };
     Utils.deserializeJson = function (string) { return jsonutils_1.Json.deserializeJson(string); };
-    Utils.stringifyParams = function (params) { jsonutils_1.Json.stringifyParams(params); };
+    Utils.stringifyParams = function (params) { return jsonutils_1.Json.stringifyParams(params); };
     return Utils;
 }());
 exports.Utils = Utils;

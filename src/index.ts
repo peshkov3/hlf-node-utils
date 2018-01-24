@@ -9,9 +9,9 @@ export class Utils {
     //     this.logger.error(name);
     //     this.logger.error(err);
     // }
-    public static serializeJson(obj: Object): string { return Json.serializeJson(obj); }
-    public static deserializeJson(string: string): Object { return Json.deserializeJson(string); }
-    public static stringifyParams(params: any[]): void { Json.stringifyParams(params); }
+    public static serializeJson(obj: Object): string | boolean { return Json.serializeJson(obj); }
+    public static deserializeJson(string: string): Object | boolean { return Json.deserializeJson(string); }
+    public static stringifyParams(params: any[]): string[] | boolean { return Json.stringifyParams(params); }
 }
 
 // tslint:disable-next-line:max-classes-per-file

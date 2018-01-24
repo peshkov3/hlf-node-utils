@@ -2,9 +2,9 @@
 import { LoggerInstance } from 'winston';
 import 'winston-daily-rotate-file';
 export declare class Utils {
-    static serializeJson(obj: Object): string;
-    static deserializeJson(string: string): Object;
-    static stringifyParams(params: any[]): void;
+    static serializeJson(obj: Object): string | boolean;
+    static deserializeJson(string: string): Object | boolean;
+    static stringifyParams(params: any[]): string[] | boolean;
 }
 export declare class Log {
     static hlf: LoggerInstance;
