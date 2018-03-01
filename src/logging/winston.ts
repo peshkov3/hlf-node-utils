@@ -89,12 +89,12 @@ export class Loggers {
     public static file: LoggerInstance = new Logger({
         transports: [ new transports.DailyRotateFile({
             level: 'info',
-            filename: '/var/log/chain-service/chain-service.log',
+            filename: './log/dev-logs.log',
             datePattern: 'yyyy-MM-dd.',
             prepend: true,
             json: false,
             handleExceptions: true,
-            maxFiles: 10
+            maxFiles: 5
         })],
         exitOnError: false,
     });
