@@ -7,5 +7,8 @@ export declare class Loggers {
     static pusher: LoggerInstance;
     static config: LoggerInstance;
     static awssqs: LoggerInstance;
+    static redisQueue: LoggerInstance;
+    static app: LoggerInstance;
+    static file: LoggerInstance;
     static prodlogger: LoggerInstance;
 }

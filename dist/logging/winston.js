@@ -60,6 +60,40 @@ var Loggers = /** @class */ (function () {
             })],
         exitOnError: false,
     });
+    Loggers.redisQueue = new winston_1.Logger({
+        transports: [new winston_1.transports.Console({
+                level: 'debug',
+                prettyPrint: true,
+                handleExceptions: true,
+                json: false,
+                label: 'REDIS',
+                colorize: true,
+            })],
+        exitOnError: false,
+    });
+    Loggers.app = new winston_1.Logger({
+        transports: [new winston_1.transports.Console({
+                level: 'debug',
+                prettyPrint: true,
+                handleExceptions: true,
+                json: false,
+                label: 'APP',
+                colorize: true,
+            })],
+        exitOnError: false,
+    });
+    Loggers.file = new winston_1.Logger({
+        transports: [new winston_1.transports.DailyRotateFile({
+                level: 'info',
+                filename: '/var/log/chain-service/chain-service.log',
+                datePattern: 'yyyy-MM-dd.',
+                prepend: true,
+                json: false,
+                handleExceptions: true,
+                maxFiles: 10
+            })],
+        exitOnError: false,
+    });
     Loggers.prodlogger = new winston_1.Logger({
         transports: [new winston_1.transports.Console({
                 level: 'debug',

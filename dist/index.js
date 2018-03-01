@@ -25,6 +25,9 @@ var Log = /** @class */ (function () {
     Log.pusher = winston_1.Loggers.pusher;
     Log.awssqs = winston_1.Loggers.awssqs;
     Log.config = winston_1.Loggers.config;
+    Log.app = winston_1.Loggers.app;
+    Log.file = winston_1.Loggers.file;
+    Log.redisQueue = winston_1.Loggers.redisQueue;
     return Log;
 }());
 exports.Log = Log;

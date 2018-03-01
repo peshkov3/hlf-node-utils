@@ -36,7 +36,6 @@
         "winston-daily-rotate-file": "^1.7.2",
         "yup": "^0.23.0",
         "pusher": "^1.5.1"
-
     },
     "devDependencies": {
         "@types/express-serve-static-core": "4.0.49",

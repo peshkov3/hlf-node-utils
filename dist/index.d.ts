@@ -12,6 +12,9 @@ export declare class Log {
     static pusher: LoggerInstance;
     static awssqs: LoggerInstance;
     static config: LoggerInstance;
+    static app: LoggerInstance;
+    static file: LoggerInstance;
+    static redisQueue: LoggerInstance;
 }
 export { HlfClient } from './hlfclient/hlfclient';
 export { RequestHelper } from './hlfclient/request.helper';
