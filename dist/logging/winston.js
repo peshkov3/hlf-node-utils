@@ -85,7 +85,7 @@ var Loggers = /** @class */ (function () {
     Loggers.file = new winston_1.Logger({
         transports: [new winston_1.transports.DailyRotateFile({
                 level: 'info',
-                filename: './log/dev-logs.log',
+                filename: process.env.LOG_PATH ? process.env.LOG_PATH + '/dev-logs.log' : '/var/log/chain-service/chain-service.log',
                 datePattern: 'yyyy-MM-dd.',
                 prepend: true,
                 json: false,
