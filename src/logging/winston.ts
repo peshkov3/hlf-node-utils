@@ -63,6 +63,41 @@ export class Loggers {
         exitOnError: false,
     });
 
+    public static redisQueue: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'REDIS',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+
+    public static app: LoggerInstance = new Logger({
+        transports: [new transports.Console({
+            level: 'debug',
+            prettyPrint: true,
+            handleExceptions: true,
+            json: false,
+            label: 'APP',
+            colorize: true,
+        })],
+        exitOnError: false,
+    });
+    public static file: LoggerInstance = new Logger({
+        transports: [ new transports.DailyRotateFile({
+            level: 'info',
+            filename: '/var/log/chain-service/chain-service.log',
+            datePattern: 'yyyy-MM-dd.',
+            prepend: true,
+            json: false,
+            handleExceptions: true,
+            maxFiles: 10
+        })],
+        exitOnError: false,
+    });
     public static prodlogger: LoggerInstance = new Logger({
         transports: [new transports.Console({
             level: 'debug',

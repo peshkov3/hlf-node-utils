@@ -21,7 +21,9 @@ export class Log {
     public static pusher: LoggerInstance = Loggers.pusher;
     public static awssqs: LoggerInstance = Loggers.awssqs;
     public static config: LoggerInstance = Loggers.config;
-
+    public static app: LoggerInstance = Loggers.app;
+    public static file: LoggerInstance = Loggers.file;
+    public static redisQueue: LoggerInstance = Loggers.redisQueue;
 }
 
 export { HlfClient } from './hlfclient/hlfclient';
